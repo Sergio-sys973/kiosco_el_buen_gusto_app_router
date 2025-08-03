@@ -22,19 +22,18 @@ export default function EditProductForm({ children }: { children: React.ReactNod
     /*  console.log(data) */
       
     const result = ProductSchema.safeParse(data)
-    if(!result.success) {
-
-      result.error.issues.forEach(issue => {
-          toast.error(issue.message)
-      })
-      return
-      }
+      if(!result.success) {
+          result.error.issues.forEach(issue => {
+              toast.error(issue.message)
+          })
+          return
+        }
 
       /* Ponemos antes de la accion un return para q no se ejecute la sgte accion */
 
       /* return*/
- 
     /*console.log(result.data) */
+    
       const response = await updateProduct(result.data, id)
       
       /* Aqui Tenemos la respuesta de la validacion del servidor */

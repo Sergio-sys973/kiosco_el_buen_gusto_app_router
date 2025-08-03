@@ -19,8 +19,14 @@ export default function OrdersPage() {
  if (isLoading) return <p>Cargando...</p>  
  if(data) return (
     <>
-     <Heading>Administrar Ordenes</Heading>
+     <div className="bg-indigo-600 p-2  uppercase text-center font-black  text-4xl ">
+       Administrar Ordenes
+     </div >
      
+     <div>
+       <p className="mt-1 by-2  uppercase text-white  text-center">   {''}  </p>
+     </div>
+
      <GoBackButton />
 
      {data.length > 0 ? ( 
@@ -40,3 +46,4 @@ export default function OrdersPage() {
   )
 }
 
+ 

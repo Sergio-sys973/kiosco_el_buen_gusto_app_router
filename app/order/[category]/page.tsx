@@ -18,9 +18,14 @@ export default async function OrderPage({ params }: { params: Promise<{ category
   
   return (
     <>      
-      <Heading>
-          Elige y Personaliza tu Pedido a Continuacion
-      </Heading>
+      
+      <div className="bg-indigo-600 p-2  uppercase text-center font-black  text-2xl ">
+        Elige y Personaliza tu Pedido a Continuacion
+      </div >
+
+      <div>
+        <p className="mt-4 by-3  uppercase text-white  text-center">   {''}  </p>
+      </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 items-start">
        

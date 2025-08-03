@@ -8,8 +8,10 @@ import { createOrder } from "@/actions/create-order-action"
 import { OrderSchema } from "@/src/schema"
 
 export default function OrderSumary() {
+
   const order = useStore((state) => state.order)
   const clearOrder = useStore((state) => state.clearOrder)
+  
   const total = useMemo(() => order.reduce((total, item) => total + (item.quantity * item.price), 0), [order])
 
   const handleCreateOrder =  async (formData: FormData) => {
@@ -24,20 +26,20 @@ export default function OrderSumary() {
     
     const result = OrderSchema.safeParse(data)
 
-    /*console.log(result) */
+    /*console.log(result)*/
 
     if (!result.success) {
-      result.error.issues.forEach((issue) => {
-        toast.error(issue.message)
-      })
-      return
+        result.error.issues.forEach((issue) => {
+          toast.error(issue.message)
+        })
+        return
     }
    
     const response = await createOrder(data)
     if (response?.errors ) {
-     response.errors.forEach((issue) => {
-        toast.error(issue.message)
-      })
+        response.errors.forEach((issue) => {
+            toast.error(issue.message)
+          })
     }
 
    /* Aqui se va a realizar este codigo si pasa toda la validacion */
@@ -58,12 +60,11 @@ export default function OrderSumary() {
               item = {item}
             />
           ))}   
-          
-          <p className="text-2xl mt-20 text-center">
-            Total a Pagar: {''}
-            <span className="font-bold">{formatCurrency(total)} </span>
-          </p>
-
+           <p className="text-2xl mt-20 text-center">
+             Total a Pagar: {''}
+             <span className="font-bold">{formatCurrency(total)}</span>
+           </p>
+           
           <form
             className="w-full mt-10 space-y-5"
             action= {handleCreateOrder}
@@ -71,7 +72,7 @@ export default function OrderSumary() {
            
             <input
               type="text"
-              placeholder="Tu Nombre"
+              placeholder="Tu Nombre y Telefono"
               className="bg-white border border-gray-100 p-2 w-full"
               name="name"
             />
@@ -81,9 +82,9 @@ export default function OrderSumary() {
                 className="py-2 rounded text-white bg-black w-full text-center cursor-pointer font-bold"
                 value='Confirmar Pedido'
             />
-      
-
-          </form>
+  
+           </form>
+           
         </div>
       )}
    </aside>

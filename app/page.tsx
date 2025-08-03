@@ -1,19 +1,16 @@
 
-/*import { redirect } from "next/navigation";
 
-export default function Home() {
-  redirect('/order/cafe')
-  
-} */
-
-/*import { useState, useEffect } from 'react' */
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
 import FormLoginAdmin from "@/components/ui/FormLoginAdmin";
 
 const adminNavigation = [
   { url: "/order/cafes", text: "Ingrese como Cliente", blank: true },
-];
+  { url: "            ", text: "                    ", blank: true },
+
+  { url: "/forpage/", text: "Formas de Pagos", blank: true },
+  ];
+
 
 export default function Home() {
 

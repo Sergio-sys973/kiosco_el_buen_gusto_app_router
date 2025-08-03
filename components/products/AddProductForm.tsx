@@ -28,12 +28,12 @@ export default function AddProductForm({ children }: { children: React.ReactNode
     }
     /*console.log(result.data) */
     const response = await createProduct(result.data)
-    if (response?.errors) {
-          response.errors.forEach((issue)=> {
-            toast.error(issue.message)
-      })
-      return
-    }
+        if (response?.errors) {
+              response.errors.forEach((issue)=> {
+                toast.error(issue.message)
+          })
+          return
+        }
 
     toast.success('Producto Creado Correctamente')
     router.push('/admin/products')

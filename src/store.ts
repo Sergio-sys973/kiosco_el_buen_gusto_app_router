@@ -1,8 +1,10 @@
 import { create } from 'zustand'
 import { OrderItem } from './types'
 import { Product } from '@prisma/client'
+import { any } from 'zod'
 
 interface Store {
+    total: any
     order: OrderItem[]
     addToOrder: (product: Product) => void
     increaseQuantity: (id: Product['id']) => void
@@ -12,13 +14,14 @@ interface Store {
 }
 
 export const useStore = create<Store>((set, get) => ({
+    total: any,
     order: [],
     addToOrder: (product) => {
         const { categoryId, image, ...data } = product
 
         let order: OrderItem[] = []
         
-        if (get().order.find(item => item.id === product.id)) {
+        if (get().order.find(item => item.id === product.id )) {
             order = get().order.map( item => item.id === product.id ? {
                 ...item,
                 quantity: item.quantity + 1,
@@ -74,3 +77,4 @@ export const useStore = create<Store>((set, get) => ({
     }
 
 })) 
+

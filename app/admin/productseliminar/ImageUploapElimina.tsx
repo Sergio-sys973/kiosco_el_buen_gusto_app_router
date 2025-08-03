@@ -5,7 +5,6 @@ import Image from "next/image"
 import { useState } from "react"
 import { TbPhotoPlus } from 'react-icons/tb'
 
-
 export default function ImageUploap({ image } : { image: string | undefined}) {
 
     const[imageUrl, setImageUrl] = useState ('')
@@ -38,7 +37,7 @@ export default function ImageUploap({ image } : { image: string | undefined}) {
                               size={50}
                           />
                           <p className='text-lg font-semibold'>Agregar Imagen</p>
-                  
+
                           {imageUrl && (
                               <div
                                   className='absolute inset-0 w-full h-full'
@@ -53,7 +52,7 @@ export default function ImageUploap({ image } : { image: string | undefined}) {
                           )}
                       </div>
                   </div>
-                  
+
                   {
                       image && !imageUrl && (
                           <div className='space-y-2'>
@@ -64,7 +63,7 @@ export default function ImageUploap({ image } : { image: string | undefined}) {
                                       src={getImagePath(image)}
                                       alt='Imagen Producto'
                                       style={{ objectFit: 'contain' }}
-                  
+
                                   />
                               </div>
                           </div>
@@ -74,17 +73,14 @@ export default function ImageUploap({ image } : { image: string | undefined}) {
                       type='hidden'
                       name='image'
                       defaultValue={imageUrl ? imageUrl : image}
-                  />  
+                  /> 
                   
-                      
-                    <input
-                        type='hidden' 
-                        name='image'
-                        defaultValue={imageUrl ? imageUrl : image}                    
-                   />
-                </>
+              </>
          )} 
       </CldUploadWidget>
            
   )
 }
+
+
+

@@ -8,7 +8,7 @@ const prisma = new PrismaClient()
 
 async function main() {
     try {
-        /* await prisma.category.createMany({
+         await prisma.category.createMany({
                 data: categories
             }) 
             
@@ -17,14 +17,14 @@ async function main() {
             })
         } catch (error) {
             console.log(error)
-        } */
+        } 
 
-        await prisma.usuarios.createMany({        
-            data: usuarios
-         })
-    } catch (error) {
-        console.log(error)
-        }  
+                /*  await prisma.usuarios.createMany({        
+                        data: usuarios
+                    })
+                } catch (error) {
+                    console.log(error)
+                    }  */
 }  
 
 main()

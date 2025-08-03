@@ -17,11 +17,12 @@ const FormLoginAdmin = () => {
 
              /* Rutina provisional  */
 
-        if (username === "") {   
-            if (password === "") {
-                router.push('/admin/orders') 
+        if (username === "yoyo") {   
+            if (password === "maria") {
+                router.push('/order/cafe') 
                 
                 {
+                    
                     router.push('/admin/orders')  
                 }
              }

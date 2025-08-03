@@ -1,4 +1,4 @@
-import ProductSearchForm from "@/components/products/ProductSearchForm";
+import ProductSearchFormEliminar from "@/components/products/ProductSearchFormElimina";
 import ProductTable from "@/components/products/ProductsTable";
 import Heading from "@/components/ui/Heading";
 import { prisma } from "@/src/lib/prisma";
@@ -28,15 +28,15 @@ export default async function SearchPage({
 
     return (
         <>
-            <Heading>Resultados de búsqueda: {search}</Heading>
+            <Heading>Resultados de búsqueda {'=>'} {search}</Heading>
 
                 <div className="flex flex-col lg:flex-row lg:justify-end gap-5">
-                    <ProductSearchForm />
+                    <ProductSearchFormEliminar />
                 </div>
 
                 {products.length ? (
                     <ProductTable
-                    products={products}
+                         products={products}
                     />
 
                     ): <p className="text-center text-lg">No Hay Resultados</p>}

@@ -1,10 +1,9 @@
 import {redirect} from 'next/navigation'
 import ProductsPagination from "@/components/products/ProductsPagination";
-import ProductTable from "@/components/products/ProductsTable"; 
-import Heading from "@/components/ui/Heading";
 import { prisma } from "@/src/lib/prisma";
 import Link from 'next/link';
 import ProductSearchForm from '@/components/products/ProductSearchForm';
+import ProductsTable from '@/components/products/ProductsTable';
 
 async function productCount() {
   return await prisma.product.count()
@@ -39,11 +38,16 @@ export default async function ProductsPage({ searchParams }: { searchParams: Pro
   const totalPages = Math.ceil(totalProducts / pageSize)
 
   if (page > totalPages) redirect('/admin/products')
-  
-  
+    
   return (  
     <>
-      <Heading>Administrar Productos</Heading>
+      <div className="bg-indigo-600 p-2  uppercase font-black  text-4xl  text-center ">
+        Administrar Productos
+     </div >
+      
+      <div>
+        <p className="mt-1 by-2  uppercase text-white  text-center">   {''}  </p>
+      </div>
 
       <div className="flex flex-col lg:flex-row lg:justify-between gap-5">
          <Link
@@ -54,16 +58,18 @@ export default async function ProductsPage({ searchParams }: { searchParams: Pro
                 <ProductSearchForm />
         
           </div>
-      <ProductTable
-        products ={products}
-      />
-      < ProductsPagination
-        page={page}
-        totalPages = {totalPages}
-      />
+                <ProductsTable
+                  products ={products}
+                />
+                < ProductsPagination
+                  page={page}
+                  totalPages = {totalPages}
+                />
 
     </>
   )
-  }
+}
+  
+ 
     
  
