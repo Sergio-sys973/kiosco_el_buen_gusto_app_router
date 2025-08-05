@@ -31,8 +31,8 @@ console.log(formattedDate);  // "16 de octubre de 2024"
 
 
 type LatestOrderItemProps = {
-    order: OrderWithProducts[] | undefined
-}
+    order: OrderWithProducts[] 
+ }
 
 export default function LatestOrderItem({ order }: LatestOrderItemProps) {
 
