@@ -34,7 +34,7 @@ export default function LatestOrderItem({ order }: LatestOrderItemProps) {
               ))}
               
             <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                <dt className="text-base font-medium text-gray-900">Total  Cancelado:</dt>
+                <dt className="text-base font-medium text-gray-900">Total ojo ojo.. Cancelado:</dt>
                   <dd className="text-base font-medium text-gray-900">{formatCurrency(order.total)}                   
 
                                          

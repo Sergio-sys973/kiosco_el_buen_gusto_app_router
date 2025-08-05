@@ -18,6 +18,15 @@ export default function LatestOrderItem({ order }: LatestOrderItemProps) {
         
       
       <div className="bg-white shadow p-5 space-y-5 rounded-lg">
+
+        <div className="bg-white shadow p-5 space-y-5 rounded-lg">
+          <p className="text-2xl font-bold text-slate-600">
+            
+          </p>
+
+        
+
+        </div>
  
       </div> 
 
