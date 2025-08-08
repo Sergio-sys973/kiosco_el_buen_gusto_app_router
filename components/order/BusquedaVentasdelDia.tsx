@@ -2,10 +2,10 @@
 
 "use client"
 import { OrderWithProducts } from "@/src/types";
-import { formatCurrency } from "@/src/utils";
-import CalculoVentas  from '@/components/order/CalculoVentas';
+//import { formatCurrency } from "@/src/utils";
+//import CalculoVentas  from '@/components/order/CalculoVentas';
 
-let totalGen = 0
+//let totalGen = 0
 
 type LatestOrderItemProps = {
     order: OrderWithProducts

@@ -8,9 +8,17 @@ export type OrderItem = Pick<Product, 'id' | 'name' | 'price'> & {
 }
 
 
+interface OrderProduct {
+    id: number;
+    orderId: number;
+    productId: number;
+    quantity: number;
+    product: Product;
+}
+
 export type OrderWithProducts = {
-    [x: string]: any
-    reduce(arg0: (total: any, id: any) => any, arg1: number): unknown
+  /*  [x: string]: any 
+    reduce(arg0: (total: any, id: any) => any, arg1: number): unknown */
    /* id: string | number | readonly string[] | undefined */
     id: string | number 
     total: number
@@ -19,6 +27,10 @@ export type OrderWithProducts = {
         product: Product
     })[]
 }
+/****************************************** */
+
+
+/***************************************** */
 
 export type OrdersItem = {
       orders: {
