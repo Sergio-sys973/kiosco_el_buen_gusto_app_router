@@ -1,3 +1,4 @@
+
 import { z } from "zod";
 import { categories } from "./data/categories";
 import { products } from "./data/products";
@@ -8,28 +9,28 @@ const prisma = new PrismaClient()
 
 async function main() {
     try {
-         await prisma.category.createMany({
-                data: categories
-            }) 
-            
-            await prisma.product.createMany({
-                data: products 
-            })
-        } catch (error) {
-            console.log(error)
-        } 
+            /* await prisma.category.createMany({
+                    data: categories
+                })
 
-                /*  await prisma.usuarios.createMany({        
-                        data: usuarios
-                    })
-                } catch (error) {
-                    console.log(error)
-                    }  */
-}  
+                await prisma.product.createMany({
+                    data: products
+                })
+            } catch (error) {
+                console.log(error)
+            } */
+
+       await prisma.usuarios.createMany({        
+            data: usuarios
+        })
+    } catch (error) {
+        console.log(error)
+        }   
+}
 
 main()
     .then(async () => {
-         await prisma.$disconnect()
+        await prisma.$disconnect()
     })
     .catch(async (e) => {
         console.error(e)
@@ -38,7 +39,7 @@ main()
     })
 
 /*    validando con zod  */
-    
+
 export const ProductSchema = z.object({
     name: z.string()
         .trim()

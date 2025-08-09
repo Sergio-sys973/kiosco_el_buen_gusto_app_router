@@ -2,7 +2,7 @@
  
 import { prisma } from "@/src/lib/prisma";
 import { formatCurrency } from "@/src/utils";
- 
+
  export default async function ResumenDelDia() {
     const orders = await prisma.order.findMany({
         where: {
@@ -32,6 +32,6 @@ import { formatCurrency } from "@/src/utils";
         </>
 
         )
-     
+      
 }
 
